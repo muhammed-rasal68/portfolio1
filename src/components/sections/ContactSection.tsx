@@ -5,9 +5,8 @@ import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 
 const contactInfo = [
-  { icon: Mail, label: 'Email', value: 'hello@developer.com', href: 'mailto:hello@developer.com' },
-  { icon: MapPin, label: 'Location', value: 'San Francisco, CA', href: '#' },
-  { icon: Phone, label: 'Phone', value: '+1 (555) 123-4567', href: 'tel:+15551234567' },
+  { icon: Mail, label: 'Email', value: 'sanurasal00@gmail.com', href: 'mailto:sanurasal00@gmail.com' },
+  { icon: Phone, label: 'Phone', value: '+91 9847871738', href: 'tel:+919847871738' },
 ];
 
 export const ContactSection = () => {

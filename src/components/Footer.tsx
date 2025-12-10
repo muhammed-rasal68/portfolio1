@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Twitter, Heart } from 'lucide-react';
+import logo from '@/assets/logo.webp';
 
 const socialLinks = [
   { icon: Github, href: 'https://github.com', label: 'GitHub' },
@@ -14,10 +15,9 @@ export const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <motion.a
             href="#home"
-            className="text-2xl font-bold font-mono text-gradient"
             whileHover={{ scale: 1.05 }}
           >
-            &lt;dev/&gt;
+            <img src={logo} alt="Webloom Logo" className="h-10 w-auto" />
           </motion.a>
 
           <div className="flex items-center gap-4">

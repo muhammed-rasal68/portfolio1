@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import logo from '@/assets/logo.webp';
 
 const navItems = [
   { name: 'Home', href: '#home' },
@@ -63,10 +64,9 @@ export const Navigation = () => {
               e.preventDefault();
               handleNavClick('#home');
             }}
-            className="text-2xl font-bold font-mono text-gradient"
             whileHover={{ scale: 1.05 }}
           >
-            &lt;dev/&gt;
+            <img src={logo} alt="Webloom Logo" className="h-10 w-auto" />
           </motion.a>
 
           {/* Desktop Navigation */}

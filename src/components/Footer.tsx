@@ -17,7 +17,7 @@ export const Footer = () => {
             href="#home"
             whileHover={{ scale: 1.05 }}
           >
-            <img src={logo} alt="Webloom Logo" className="h-10 w-auto" />
+            <img src={logo} alt="Webloom Logo" className="h-10 w-auto rounded-lg" />
           </motion.a>
 
           <div className="flex items-center gap-4">

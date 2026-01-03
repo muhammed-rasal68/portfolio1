@@ -2,30 +2,43 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { ExternalLink, Github, ArrowUpRight, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import projectChess from '@/assets/project-chess.png';
+import projectCafeteria from '@/assets/project-cafeteria.png';
+import projectResults from '@/assets/project-results.png';
+import projectImposter from '@/assets/project-imposter.png';
 
 const projects = [
   {
     title: 'Perfect Chess',
     description: 'An interactive chess platform with AI opponent, move validation, and real-time gameplay features for chess enthusiasts.',
-    image: 'https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=800&h=500&fit=crop',
+    image: projectChess,
     tags: ['React', 'TypeScript', 'Chess.js', 'AI'],
     liveUrl: 'https://perfect-chess.vercel.app/',
     githubUrl: '#',
     featured: true,
   },
   {
-    title: 'Modern Web Application',
-    description: 'A sleek, modern web application built with cutting-edge technologies featuring responsive design and smooth interactions.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop',
+    title: 'Cafeteria Arafa',
+    description: 'A modern cafeteria website featuring menu showcase, online ordering, and customer reviews with a warm, inviting design.',
+    image: projectCafeteria,
     tags: ['Next.js', 'TypeScript', 'Tailwind', 'Vercel'],
     liveUrl: 'https://v0-new-project-qdbcsydpim5.vercel.app/',
     githubUrl: '#',
     featured: true,
   },
   {
+    title: 'Imposter Game',
+    description: 'A fun multiplayer word game designed to be played with friends and family, featuring real-time gameplay and social interaction.',
+    image: projectImposter,
+    tags: ['React', 'Multiplayer', 'Game', 'Real-time'],
+    liveUrl: 'https://imposter-rasal-final.base44.app/Landing',
+    githubUrl: '#',
+    featured: true,
+  },
+  {
     title: 'Result PPS',
     description: 'A comprehensive result management and analysis platform with intuitive interface for tracking and displaying academic results.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop',
+    image: projectResults,
     tags: ['React', 'Data Analytics', 'Dashboard', 'API'],
     liveUrl: 'https://result-pps.base44.app/',
     githubUrl: '#',

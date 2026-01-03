@@ -1,7 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { ExternalLink, Github, ArrowUpRight, Sparkles } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Sparkles } from 'lucide-react';
+
 import projectChess from '@/assets/project-chess.png';
 import projectCafeteria from '@/assets/project-cafeteria.png';
 import projectResults from '@/assets/project-results.png';
@@ -163,15 +163,18 @@ export const ProjectsSection = () => {
           animate={isInView ? "visible" : "hidden"}
         >
           {projects.filter(p => p.featured).map((project, index) => (
-            <motion.div
+            <motion.a
               key={project.title}
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               variants={cardVariants}
               whileHover={{ 
                 y: -10, 
                 scale: 1.02,
                 transition: { type: "spring", stiffness: 300 }
               }}
-              className="group glass-card p-0 overflow-hidden"
+              className="group glass-card p-0 overflow-hidden block cursor-pointer"
             >
               <div className="relative overflow-hidden">
                 <motion.img
@@ -186,31 +189,6 @@ export const ProjectsSection = () => {
                   initial={{ opacity: 0.7 }}
                   whileHover={{ opacity: 0.9 }}
                 />
-                <motion.div 
-                  className="absolute top-4 right-4 flex gap-2"
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.5 + index * 0.1 }}
-                >
-                  <motion.a
-                    href={project.githubUrl}
-                    whileHover={{ scale: 1.2, rotate: 360 }}
-                    whileTap={{ scale: 0.9 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                    className="w-10 h-10 rounded-lg glass flex items-center justify-center text-foreground hover:text-primary transition-colors"
-                  >
-                    <Github className="w-5 h-5" />
-                  </motion.a>
-                  <motion.a
-                    href={project.liveUrl}
-                    whileHover={{ scale: 1.2, rotate: -360 }}
-                    whileTap={{ scale: 0.9 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                    className="w-10 h-10 rounded-lg glass flex items-center justify-center text-foreground hover:text-primary transition-colors"
-                  >
-                    <ExternalLink className="w-5 h-5" />
-                  </motion.a>
-                </motion.div>
               </div>
               <div className="p-6">
                 <motion.h3 
@@ -235,7 +213,7 @@ export const ProjectsSection = () => {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </motion.div>
 
@@ -247,15 +225,18 @@ export const ProjectsSection = () => {
           animate={isInView ? "visible" : "hidden"}
         >
           {projects.filter(p => !p.featured).map((project, index) => (
-            <motion.div
+            <motion.a
               key={project.title}
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               variants={cardVariants}
               whileHover={{ 
                 scale: 1.03, 
                 y: -8,
                 boxShadow: "0 20px 40px -15px rgba(0,0,0,0.3)"
               }}
-              className="group glass-card flex flex-col"
+              className="group glass-card flex flex-col block cursor-pointer"
             >
               <div className="flex items-start justify-between mb-4">
                 <motion.h3 
@@ -264,22 +245,6 @@ export const ProjectsSection = () => {
                 >
                   {project.title}
                 </motion.h3>
-                <div className="flex gap-2">
-                  <motion.a
-                    href={project.githubUrl}
-                    whileHover={{ scale: 1.3, rotate: 15 }}
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <Github className="w-5 h-5" />
-                  </motion.a>
-                  <motion.a
-                    href={project.liveUrl}
-                    whileHover={{ scale: 1.3, rotate: -15 }}
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <ArrowUpRight className="w-5 h-5" />
-                  </motion.a>
-                </div>
               </div>
               <p className="text-muted-foreground text-sm mb-4 flex-grow">
                 {project.description}
@@ -298,31 +263,10 @@ export const ProjectsSection = () => {
                   </motion.span>
                 ))}
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-center mt-12"
-        >
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Button variant="glass" size="lg" className="group">
-              <span>View All Projects</span>
-              <motion.span
-                animate={{ x: [0, 5, 0] }}
-                transition={{ duration: 1, repeat: Infinity }}
-              >
-                <ArrowUpRight className="w-4 h-4 ml-2" />
-              </motion.span>
-            </Button>
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   );

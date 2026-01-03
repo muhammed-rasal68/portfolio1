@@ -210,7 +210,7 @@ export const HeroSection = () => {
             className="flex items-center justify-center gap-6"
           >
             {[
-              { icon: Github, href: 'https://github.com', label: 'GitHub' },
+              { icon: Github, href: 'https://github.com/muhammed-rasal68', label: 'GitHub' },
               { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
               { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
             ].map(({ icon: Icon, href, label }, index) => (

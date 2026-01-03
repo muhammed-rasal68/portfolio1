@@ -3,7 +3,7 @@ import { Github, Linkedin, Twitter, Heart } from 'lucide-react';
 import logo from '@/assets/logo.webp';
 
 const socialLinks = [
-  { icon: Github, href: 'https://github.com', label: 'GitHub' },
+  { icon: Github, href: 'https://github.com/muhammed-rasal68', label: 'GitHub' },
   { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
   { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
 ];

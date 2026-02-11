@@ -6,6 +6,7 @@ import projectChess from '@/assets/project-chess.png';
 import projectCafeteria from '@/assets/project-cafeteria.png';
 import projectResults from '@/assets/project-results.png';
 import projectImposter from '@/assets/project-imposter.png';
+import projectSoundwave from '@/assets/project-soundwave.png';
 
 const projects = [
   {
@@ -32,6 +33,15 @@ const projects = [
     image: projectImposter,
     tags: ['React', 'Multiplayer', 'Game', 'Real-time'],
     liveUrl: 'https://imposter-rasal-final.base44.app/Landing',
+    githubUrl: '#',
+    featured: true,
+  },
+  {
+    title: 'Soundwave',
+    description: 'A Spotify-inspired music streaming interface with playlists, track browsing, and a sleek dark-themed design.',
+    image: projectSoundwave,
+    tags: ['React', 'Music', 'Streaming', 'UI/UX'],
+    liveUrl: 'https://soundwave-spotify.base44.app',
     githubUrl: '#',
     featured: true,
   },

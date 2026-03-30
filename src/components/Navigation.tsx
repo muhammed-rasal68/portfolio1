@@ -65,8 +65,9 @@ export const Navigation = () => {
               handleNavClick('#home');
             }}
             whileHover={{ scale: 1.05 }}
+            className="text-xl font-bold font-display text-gradient"
           >
-            <img src={logo} alt="Webloom Logo" className="h-10 w-auto rounded-full" />
+            Webloom
           </motion.a>
 
           {/* Desktop Navigation */}

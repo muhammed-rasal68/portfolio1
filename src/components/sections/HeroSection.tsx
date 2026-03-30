@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowDown, Github, Linkedin, Twitter, Sparkles } from 'lucide-react';
+import { ArrowDown, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Hero3D } from '@/components/Hero3D';
 

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowDown, Github, Linkedin, Twitter, Sparkles } from 'lucide-react';
+import { ArrowDown, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Hero3D } from '@/components/Hero3D';
 
@@ -203,38 +203,6 @@ export const HeroSection = () => {
             </motion.div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            className="flex items-center justify-center gap-6"
-          >
-            {[
-              { icon: Github, href: 'https://github.com/muhammed-rasal68', label: 'GitHub' },
-              { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-              { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-            ].map(({ icon: Icon, href, label }, index) => (
-              <motion.a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8 + index * 0.1, duration: 0.5 }}
-                whileHover={{ 
-                  scale: 1.2, 
-                  y: -5,
-                  rotate: [0, -10, 10, 0],
-                  transition: { rotate: { duration: 0.4 } }
-                }}
-                whileTap={{ scale: 0.9 }}
-                className="w-12 h-12 rounded-xl glass flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 transition-colors"
-              >
-                <Icon className="w-5 h-5" />
-              </motion.a>
-            ))}
-          </motion.div>
         </div>
       </div>
 

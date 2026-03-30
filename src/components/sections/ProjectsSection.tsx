@@ -15,7 +15,6 @@ const projects = [
     image: projectChess,
     tags: ['React', 'TypeScript', 'Chess.js', 'AI'],
     liveUrl: 'https://perfect-chess.vercel.app/',
-    githubUrl: '#',
     featured: true,
   },
   {
@@ -24,7 +23,6 @@ const projects = [
     image: projectCafeteria,
     tags: ['Next.js', 'TypeScript', 'Tailwind', 'Vercel'],
     liveUrl: 'https://v0-new-project-qdbcsydpim5.vercel.app/',
-    githubUrl: '#',
     featured: true,
   },
   {
@@ -33,7 +31,6 @@ const projects = [
     image: projectImposter,
     tags: ['React', 'Multiplayer', 'Game', 'Real-time'],
     liveUrl: 'https://imposter-rasal-final.base44.app/Landing',
-    githubUrl: '#',
     featured: true,
   },
   {
@@ -42,7 +39,6 @@ const projects = [
     image: projectSoundwave,
     tags: ['React', 'Music', 'Streaming', 'UI/UX'],
     liveUrl: 'https://soundwave-spotify.base44.app',
-    githubUrl: '#',
     featured: true,
   },
   {
@@ -51,8 +47,7 @@ const projects = [
     image: projectResults,
     tags: ['React', 'Data Analytics', 'Dashboard', 'API'],
     liveUrl: 'https://result-pps.base44.app/',
-    githubUrl: '#',
-    featured: false,
+    featured: true,
   },
 ];
 

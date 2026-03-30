@@ -203,7 +203,31 @@ export const HeroSection = () => {
             </motion.div>
           </motion.div>
 
-        </div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="flex items-center justify-center gap-6"
+          >
+            <motion.a
+              href="https://github.com/muhammed-rasal68"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.5 }}
+              whileHover={{ 
+                scale: 1.2, 
+                y: -5,
+                rotate: [0, -10, 10, 0],
+                transition: { rotate: { duration: 0.4 } }
+              }}
+              whileTap={{ scale: 0.9 }}
+              className="w-12 h-12 rounded-xl glass flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 transition-colors"
+            >
+              <Github className="w-5 h-5" />
+            </motion.a>
+          </motion.div>
       </div>
 
       {/* Scroll indicator */}

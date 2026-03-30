@@ -228,6 +228,7 @@ export const HeroSection = () => {
               <Github className="w-5 h-5" />
             </motion.a>
           </motion.div>
+        </div>
       </div>
 
       {/* Scroll indicator */}

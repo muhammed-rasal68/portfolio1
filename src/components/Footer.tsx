@@ -17,8 +17,6 @@ export const Footer = () => {
             href="#home"
             whileHover={{ scale: 1.05 }}
           >
-            <img src={logo} alt="Webloom Logo" className="h-10 w-auto rounded-full" />
-          </motion.a>
 
           <div className="flex items-center gap-4">
             {socialLinks.map(({ icon: Icon, href, label }) => (
@@ -35,9 +33,6 @@ export const Footer = () => {
               </motion.a>
             ))}
           </div>
-
-          <p className="text-sm text-muted-foreground flex items-center gap-1">
-            Built with <Heart className="w-4 h-4 text-destructive" /> © {new Date().getFullYear()}
           </p>
         </div>
       </div>

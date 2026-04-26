@@ -60,11 +60,16 @@
 
   html {
     scroll-behavior: smooth;
+    @apply bg-background;
   }
 
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-display);
+  }
+  
+  #root {
+    @apply bg-background;
   }
 
   ::selection {

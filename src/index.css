@@ -61,15 +61,20 @@
   html {
     scroll-behavior: smooth;
     @apply bg-background;
+    height: 100%;
   }
 
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-display);
+    height: 100%;
+    margin: 0;
+    padding: 0;
   }
   
   #root {
     @apply bg-background;
+    min-height: 100vh;
   }
 
   ::selection {

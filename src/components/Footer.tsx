@@ -1,11 +1,9 @@
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Twitter } from 'lucide-react';
+import { Github } from 'lucide-react';
 import logo from '@/assets/logo.webp';
 
 const socialLinks = [
   { icon: Github, href: 'https://github.com/muhammed-rasal68', label: 'GitHub' },
-  { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-  { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
 ];
 
 export const Footer = () => {

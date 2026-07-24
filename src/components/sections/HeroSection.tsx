@@ -72,26 +72,7 @@ export const HeroSection = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8, y: 30 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.6, -0.05, 0.01, 0.99] }}
-            className="mb-6"
-          >
-            <motion.span 
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm font-mono text-primary border-primary/30"
-              whileHover={{ scale: 1.05 }}
-              animate={floatingAnimation}
-            >
-              <motion.span
-                animate={{ rotate: [0, 15, -15, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                <Sparkles className="w-4 h-4" />
-              </motion.span>
-              Available for freelance work
-            </motion.span>
-          </motion.div>
+
 
           <motion.h1
             className="text-5xl md:text-7xl lg:text-8xl font-bold font-display mb-6 leading-tight"

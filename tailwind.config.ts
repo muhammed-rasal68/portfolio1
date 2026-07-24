@@ -1,3 +1,4 @@
+// v1
 import type { Config } from "tailwindcss";
 
 export default {

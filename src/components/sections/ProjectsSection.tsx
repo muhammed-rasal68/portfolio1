@@ -1,3 +1,4 @@
+// v1
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Sparkles } from 'lucide-react';

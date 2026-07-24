@@ -1,3 +1,4 @@
+// v1
 export type Json =
   | string
   | number

@@ -125,7 +125,7 @@ export const ContactSection = () => {
           transition={{ duration: 0.8, ease: [0.6, -0.05, 0.01, 0.99] }}
           className="text-center mb-16"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm font-mono text-primary mb-6">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm font-mono text-foreground mb-6">
             <Sparkles className="w-4 h-4" />
             Get In Touch
           </span>
@@ -136,7 +136,7 @@ export const ContactSection = () => {
             transition={{ delay: 0.3, duration: 0.6 }}
           >
             Let's{' '}
-            <span className="text-gradient inline-block">
+            <span className="inline-block text-foreground">
               collaborate
             </span>
           </motion.h2>
@@ -263,7 +263,7 @@ export const ContactSection = () => {
                   className="flex items-center gap-4 glass-card group hover:border-primary/30 transition-all"
                 >
                   <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <item.icon className="w-6 h-6 text-primary" />
+                    <item.icon className="w-6 h-6 text-foreground" />
                   </div>
                   <div>
                     <div className="text-sm text-muted-foreground">
@@ -284,7 +284,7 @@ export const ContactSection = () => {
               className="glass-card border-glow"
             >
               <div className="flex items-center gap-3 mb-4">
-                <CheckCircle className="w-6 h-6 text-accent" />
+                <CheckCircle className="w-6 h-6 text-foreground" />
                 <span className="font-semibold">Available for new projects</span>
               </div>
               <p className="text-muted-foreground text-sm">

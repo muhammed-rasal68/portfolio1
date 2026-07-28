@@ -111,7 +111,7 @@ export const ProjectsSection = () => {
           className="text-center mb-16"
         >
           <motion.span 
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm font-mono text-primary mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm font-mono text-foreground mb-6"
             initial={{ scale: 0, rotate: -10 }}
             animate={isInView ? { scale: 1, rotate: 0 } : {}}
             transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
@@ -126,7 +126,7 @@ export const ProjectsSection = () => {
             transition={{ delay: 0.3, duration: 0.6 }}
           >
             Recent{' '}
-            <span className="text-gradient inline-block">
+            <span className="inline-block text-foreground">
               work
             </span>
           </motion.h2>
@@ -174,7 +174,7 @@ export const ProjectsSection = () => {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-mono"
+                      className="px-3 py-1 rounded-full bg-primary/10 text-foreground text-xs font-mono"
                     >
                       {tag}
                     </span>

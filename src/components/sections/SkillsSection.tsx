@@ -124,7 +124,7 @@ export const SkillsSection = () => {
           className="text-center mb-16"
         >
           <motion.span 
-            className="inline-block px-4 py-2 rounded-full glass text-sm font-mono text-primary mb-6"
+            className="inline-block px-4 py-2 rounded-full glass text-sm font-mono text-foreground mb-6"
             initial={{ scale: 0 }}
             animate={isInView ? { scale: 1 } : {}}
             transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
@@ -138,7 +138,7 @@ export const SkillsSection = () => {
             transition={{ delay: 0.3, duration: 0.6 }}
           >
             Technologies I{' '}
-            <span className="text-gradient inline-block">
+            <span className="inline-block text-foreground">
               master
             </span>
           </motion.h2>
@@ -166,7 +166,7 @@ export const SkillsSection = () => {
               variants={cardVariants}
               className="glass-card"
             >
-              <h3 className="text-xl font-semibold mb-6 text-primary">
+              <h3 className="text-xl font-semibold mb-6 text-foreground">
                 {category.title}
               </h3>
               <div className="space-y-5">

@@ -128,7 +128,6 @@ export const SkillsSection = () => {
             initial={{ scale: 0 }}
             animate={isInView ? { scale: 1 } : {}}
             transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-            whileHover={{ scale: 1.05 }}
           >
             Skills & Expertise
           </motion.span>
@@ -139,15 +138,9 @@ export const SkillsSection = () => {
             transition={{ delay: 0.3, duration: 0.6 }}
           >
             Technologies I{' '}
-            <motion.span 
-              className="text-gradient inline-block"
-              initial={{ opacity: 0, rotateY: -90 }}
-              animate={isInView ? { opacity: 1, rotateY: 0 } : {}}
-              transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
-              whileHover={{ scale: 1.1, rotateY: 10 }}
-            >
+            <span className="text-gradient inline-block">
               master
-            </motion.span>
+            </span>
           </motion.h2>
           <motion.p 
             className="text-lg text-muted-foreground max-w-2xl mx-auto"
@@ -171,21 +164,11 @@ export const SkillsSection = () => {
             <motion.div
               key={category.title}
               variants={cardVariants}
-              whileHover={{ 
-                scale: 1.02, 
-                y: -5,
-                boxShadow: "0 25px 50px -12px rgba(0,0,0,0.25)"
-              }}
               className="glass-card"
             >
-              <motion.h3 
-                className="text-xl font-semibold mb-6 text-primary"
-                initial={{ x: -20, opacity: 0 }}
-                animate={isInView ? { x: 0, opacity: 1 } : {}}
-                transition={{ delay: 0.3 + catIndex * 0.1 }}
-              >
+              <h3 className="text-xl font-semibold mb-6 text-primary">
                 {category.title}
-              </motion.h3>
+              </h3>
               <div className="space-y-5">
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div 
@@ -195,12 +178,9 @@ export const SkillsSection = () => {
                     transition={{ delay: 0.5 + catIndex * 0.2 + skillIndex * 0.1 }}
                   >
                     <div className="flex justify-between mb-2">
-                      <motion.span 
-                        className="text-sm font-medium"
-                        whileHover={{ x: 5, color: "hsl(var(--primary))" }}
-                      >
+                      <span className="text-sm font-medium">
                         {skill.name}
-                      </motion.span>
+                      </span>
                       <motion.span 
                         className="text-sm text-muted-foreground"
                         initial={{ opacity: 0 }}
@@ -219,24 +199,11 @@ export const SkillsSection = () => {
                           delay: 0.6 + catIndex * 0.2 + skillIndex * 0.15,
                           ease: [0.6, -0.05, 0.01, 0.99],
                         }}
-                        className="h-full rounded-full relative overflow-hidden"
+                        className="h-full rounded-full"
                         style={{
                           background: 'linear-gradient(90deg, hsl(217, 91%, 60%) 0%, hsl(190, 95%, 50%) 100%)',
                         }}
-                      >
-                        {/* Shimmer effect */}
-                        <motion.div
-                          className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-                          initial={{ x: '-100%' }}
-                          animate={isInView ? { x: '200%' } : {}}
-                          transition={{
-                            delay: 1.5 + catIndex * 0.2,
-                            duration: 1,
-                            repeat: Infinity,
-                            repeatDelay: 3,
-                          }}
-                        />
-                      </motion.div>
+                      />
                     </div>
                   </motion.div>
                 ))}
@@ -259,14 +226,7 @@ export const SkillsSection = () => {
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
               variants={tagVariants}
-              whileHover={{ 
-                scale: 1.15, 
-                y: -5,
-                rotate: [0, -3, 3, 0],
-                transition: { rotate: { duration: 0.3 } }
-              }}
-              whileTap={{ scale: 0.95 }}
-              className="px-4 py-2 rounded-lg glass text-sm font-mono text-muted-foreground hover:text-primary hover:border-primary/30 transition-all cursor-default"
+              className="px-4 py-2 rounded-lg glass text-sm font-mono text-muted-foreground"
             >
               {tech}
             </motion.span>

@@ -99,7 +99,6 @@ export const Navigation = () => {
               transition={{ delay: 0.5 }}
             >
               <Button
-                variant="hero"
                 size="sm"
                 className="ml-4"
                 onClick={() => handleNavClick('#contact')}
@@ -149,7 +148,6 @@ export const Navigation = () => {
                 </motion.a>
               ))}
               <Button
-                variant="hero"
                 size="lg"
                 className="mt-4"
                 onClick={() => handleNavClick('#contact')}

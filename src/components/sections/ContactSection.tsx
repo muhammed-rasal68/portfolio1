@@ -43,20 +43,11 @@ const itemVariants = {
   },
 };
 
-const inputVariants = {
-  focus: {
-    scale: 1.02,
-    boxShadow: "0 0 20px rgba(var(--primary), 0.3)",
-    transition: { type: "spring", stiffness: 300 },
-  },
-};
-
 export const ContactSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [focusedField, setFocusedField] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -134,21 +125,10 @@ export const ContactSection = () => {
           transition={{ duration: 0.8, ease: [0.6, -0.05, 0.01, 0.99] }}
           className="text-center mb-16"
         >
-          <motion.span 
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm font-mono text-primary mb-6"
-            initial={{ scale: 0, rotate: -10 }}
-            animate={isInView ? { scale: 1, rotate: 0 } : {}}
-            transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-            whileHover={{ scale: 1.05 }}
-          >
-            <motion.span
-              animate={{ rotate: [0, 15, -15, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              <Sparkles className="w-4 h-4" />
-            </motion.span>
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm font-mono text-primary mb-6">
+            <Sparkles className="w-4 h-4" />
             Get In Touch
-          </motion.span>
+          </span>
           <motion.h2 
             className="text-4xl md:text-5xl font-bold font-display mb-6"
             initial={{ opacity: 0, y: 30 }}
@@ -156,15 +136,9 @@ export const ContactSection = () => {
             transition={{ delay: 0.3, duration: 0.6 }}
           >
             Let's{' '}
-            <motion.span 
-              className="text-gradient inline-block"
-              initial={{ opacity: 0, scale: 0, rotateZ: -10 }}
-              animate={isInView ? { opacity: 1, scale: 1, rotateZ: 0 } : {}}
-              transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
-              whileHover={{ scale: 1.1, rotateZ: 5 }}
-            >
+            <span className="text-gradient inline-block">
               collaborate
-            </motion.span>
+            </span>
           </motion.h2>
           <motion.p 
             className="text-lg text-muted-foreground max-w-2xl mx-auto"
@@ -184,10 +158,9 @@ export const ContactSection = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2, type: "spring" }}
           >
-            <motion.form 
+            <form 
               onSubmit={handleSubmit} 
               className="glass-card space-y-6"
-              whileHover={{ boxShadow: "0 25px 50px -12px rgba(0,0,0,0.25)" }}
             >
               {[
                 { id: 'name', label: 'Name', type: 'text', placeholder: 'Your name' },
@@ -199,25 +172,20 @@ export const ContactSection = () => {
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 0.4 + index * 0.1 }}
                 >
-                  <motion.label 
+                  <label 
                     htmlFor={field.id} 
                     className="block text-sm font-medium mb-2"
-                    animate={{ x: focusedField === field.id ? 5 : 0 }}
                   >
                     {field.label}
-                  </motion.label>
-                  <motion.input
+                  </label>
+                  <input
                     type={field.type}
                     id={field.id}
                     value={formData[field.id as keyof typeof formData]}
                     onChange={(e) => setFormData({ ...formData, [field.id]: e.target.value })}
-                    onFocus={() => setFocusedField(field.id)}
-                    onBlur={() => setFocusedField(null)}
                     required
                     className="w-full px-4 py-3 rounded-lg bg-muted border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-foreground placeholder:text-muted-foreground"
                     placeholder={field.placeholder}
-                    whileFocus="focus"
-                    variants={inputVariants}
                   />
                 </motion.div>
               ))}
@@ -226,47 +194,33 @@ export const ContactSection = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.6 }}
               >
-                <motion.label 
+                <label 
                   htmlFor="message" 
                   className="block text-sm font-medium mb-2"
-                  animate={{ x: focusedField === 'message' ? 5 : 0 }}
                 >
                   Message
-                </motion.label>
-                <motion.textarea
+                </label>
+                <textarea
                   id="message"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  onFocus={() => setFocusedField('message')}
-                  onBlur={() => setFocusedField(null)}
                   required
                   rows={5}
                   className="w-full px-4 py-3 rounded-lg bg-muted border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none text-foreground placeholder:text-muted-foreground"
                   placeholder="Tell me about your project..."
-                  whileFocus="focus"
-                  variants={inputVariants}
                 />
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.7 }}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
               >
                 <Button
                   type="submit"
-                  variant="hero"
                   size="lg"
-                  className="w-full group relative overflow-hidden"
+                  className="w-full"
                   disabled={isSubmitting}
                 >
-                  <motion.span
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                    initial={{ x: '-100%' }}
-                    whileHover={{ x: '100%' }}
-                    transition={{ duration: 0.6 }}
-                  />
                   {isSubmitting ? (
                     <>
                       <motion.div
@@ -279,17 +233,12 @@ export const ContactSection = () => {
                   ) : (
                     <>
                       Send Message
-                      <motion.span
-                        animate={{ x: [0, 5, 0] }}
-                        transition={{ duration: 1, repeat: Infinity }}
-                      >
-                        <Send className="w-4 h-4 ml-2" />
-                      </motion.span>
+                      <Send className="w-4 h-4 ml-2" />
                     </>
                   )}
                 </Button>
               </motion.div>
-            </motion.form>
+            </form>
           </motion.div>
 
           {/* Contact Info */}
@@ -305,41 +254,23 @@ export const ContactSection = () => {
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
             >
-              {contactInfo.map((item, index) => (
+              {contactInfo.map((item) => (
                 <motion.a
                   key={item.label}
                   href={item.href}
                   variants={itemVariants}
-                  whileHover={{ 
-                    scale: 1.03, 
-                    x: 10,
-                    boxShadow: "0 10px 30px -10px rgba(0,0,0,0.3)"
-                  }}
-                  whileTap={{ scale: 0.98 }}
                   className="flex items-center gap-4 glass-card group hover:border-primary/30 transition-all"
                 >
-                  <motion.div 
-                    className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors"
-                    whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
-                    transition={{ duration: 0.4 }}
-                  >
+                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                     <item.icon className="w-6 h-6 text-primary" />
-                  </motion.div>
+                  </div>
                   <div>
-                    <motion.div 
-                      className="text-sm text-muted-foreground"
-                      initial={{ opacity: 0 }}
-                      animate={isInView ? { opacity: 1 } : {}}
-                      transition={{ delay: 0.5 + index * 0.1 }}
-                    >
+                    <div className="text-sm text-muted-foreground">
                       {item.label}
-                    </motion.div>
-                    <motion.div 
-                      className="font-medium group-hover:text-primary transition-colors"
-                      whileHover={{ x: 5 }}
-                    >
+                    </div>
+                    <div className="font-medium group-hover:text-primary transition-colors">
                       {item.value}
-                    </motion.div>
+                    </div>
                   </div>
                 </motion.a>
               ))}
@@ -349,42 +280,16 @@ export const ContactSection = () => {
               initial={{ opacity: 0, y: 30, scale: 0.9 }}
               animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.7, type: "spring" }}
-              whileHover={{ 
-                scale: 1.02,
-                boxShadow: "0 20px 40px -15px rgba(var(--primary), 0.3)"
-              }}
-              className="glass-card border-glow relative overflow-hidden"
+              className="glass-card border-glow"
             >
-              {/* Animated gradient border */}
-              <motion.div
-                className="absolute inset-0 rounded-2xl opacity-50"
-                style={{
-                  background: "linear-gradient(90deg, transparent, hsl(var(--primary) / 0.3), transparent)",
-                }}
-                animate={{ x: ['-100%', '100%'] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-              />
-              <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-4">
-                  <motion.div
-                    animate={{ 
-                      scale: [1, 1.2, 1],
-                      rotate: [0, 360],
-                    }}
-                    transition={{ 
-                      scale: { duration: 2, repeat: Infinity },
-                      rotate: { duration: 4, repeat: Infinity, ease: "linear" }
-                    }}
-                  >
-                    <CheckCircle className="w-6 h-6 text-accent" />
-                  </motion.div>
-                  <span className="font-semibold">Available for new projects</span>
-                </div>
-                <p className="text-muted-foreground text-sm">
-                  I'm currently accepting new clients and exciting project opportunities.
-                  Let's discuss how I can help bring your vision to life.
-                </p>
+              <div className="flex items-center gap-3 mb-4">
+                <CheckCircle className="w-6 h-6 text-accent" />
+                <span className="font-semibold">Available for new projects</span>
               </div>
+              <p className="text-muted-foreground text-sm">
+                I'm currently accepting new clients and exciting project opportunities.
+                Let's discuss how I can help bring your vision to life.
+              </p>
             </motion.div>
           </motion.div>
         </div>

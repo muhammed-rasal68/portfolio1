@@ -120,15 +120,9 @@ export const AboutSection = () => {
             transition={{ delay: 0.3, duration: 0.6 }}
           >
             Passionate about creating{' '}
-            <motion.span 
-              className="text-gradient inline-block"
-              initial={{ opacity: 0, scale: 0 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
-              whileHover={{ scale: 1.1 }}
-            >
+            <span className="text-gradient inline-block">
               impactful
-            </motion.span> solutions
+            </span> solutions
           </motion.h2>
           <motion.p 
             className="text-lg text-muted-foreground max-w-3xl mx-auto"
@@ -153,12 +147,7 @@ export const AboutSection = () => {
             <motion.div
               key={stat.label}
               variants={countVariants}
-              whileHover={{ 
-                scale: 1.05, 
-                y: -5,
-                boxShadow: "0 20px 40px -15px rgba(0,0,0,0.3)"
-              }}
-              className="glass-card text-center group hover:border-primary/30 transition-all duration-300 cursor-default"
+              className="glass-card text-center"
             >
               <motion.div 
                 className="text-4xl md:text-5xl font-bold text-gradient mb-2"
@@ -191,29 +180,15 @@ export const AboutSection = () => {
             <motion.div
               key={value.title}
               variants={itemVariants}
-              whileHover={{ 
-                scale: 1.03, 
-                y: -10,
-                transition: { type: "spring", stiffness: 400 }
-              }}
-              className="glass-card group hover:border-primary/30 transition-all duration-300 cursor-default"
+              className="glass-card"
             >
               <motion.div 
-                className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors"
-                whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
-                transition={{ duration: 0.4 }}
+                className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4"
               >
-                <motion.div
-                  animate={isInView ? { 
-                    rotate: [0, 360],
-                  } : {}}
-                  transition={{ delay: 0.8 + index * 0.2, duration: 0.6 }}
-                >
-                  <value.icon className="w-7 h-7 text-primary" />
-                </motion.div>
+                <value.icon className="w-7 h-7 text-primary" />
               </motion.div>
               <motion.h3 
-                className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors"
+                className="text-xl font-semibold mb-3"
               >
                 {value.title}
               </motion.h3>

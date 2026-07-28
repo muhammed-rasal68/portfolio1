@@ -91,12 +91,7 @@ export const HeroSection = () => {
                   {letter === ' ' ? '\u00A0' : letter}
                 </motion.span>
               ))}{' '}
-              <motion.span
-                className="text-gradient inline-block"
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.8, duration: 0.6, type: "spring", stiffness: 200 }}
-              >
+              <span className="inline-block">
                 {highlight.split('').map((letter, i) => (
                   <motion.span
                     key={i}
@@ -105,13 +100,11 @@ export const HeroSection = () => {
                     animate="visible"
                     variants={letterVariants}
                     className="inline-block"
-                    whileHover={{ scale: 1.2, rotate: [0, 10, -10, 0] }}
-                    transition={{ duration: 0.3 }}
                   >
                     {letter}
                   </motion.span>
                 ))}
-              </motion.span>
+              </span>
             </div>
             <div className="overflow-hidden">
               {subtitle.split('').map((letter, i) => (
@@ -146,43 +139,18 @@ export const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
           >
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            <Button
+              size="xl"
+              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              <Button
-                variant="hero"
-                size="xl"
-                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="group relative overflow-hidden"
-              >
-                <motion.span
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                  initial={{ x: '-100%' }}
-                  whileHover={{ x: '100%' }}
-                  transition={{ duration: 0.6 }}
-                />
-                View My Work
-              </Button>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              View My Work
+            </Button>
+            <Button
+              size="xl"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              <Button
-                variant="glass"
-                size="xl"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="group"
-              >
-                <motion.span
-                  className="relative"
-                  whileHover={{ x: 5 }}
-                >
-                  Get In Touch
-                </motion.span>
-              </Button>
-            </motion.div>
+              Get In Touch
+            </Button>
           </motion.div>
 
           <motion.div
@@ -191,24 +159,14 @@ export const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="flex items-center justify-center gap-6"
           >
-            <motion.a
+            <a
               href="https://github.com/muhammed-rasal68"
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.5 }}
-              whileHover={{ 
-                scale: 1.2, 
-                y: -5,
-                rotate: [0, -10, 10, 0],
-                transition: { rotate: { duration: 0.4 } }
-              }}
-              whileTap={{ scale: 0.9 }}
-              className="w-12 h-12 rounded-xl glass flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 transition-colors"
+              className="w-12 h-12 rounded-xl glass flex items-center justify-center text-muted-foreground"
             >
               <Github className="w-5 h-5" />
-            </motion.a>
+            </a>
           </motion.div>
         </div>
       </div>

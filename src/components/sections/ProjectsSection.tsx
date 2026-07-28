@@ -77,14 +77,6 @@ const cardVariants = {
   },
 };
 
-const imageVariants = {
-  hover: {
-    scale: 1.1,
-    rotate: 2,
-    transition: { duration: 0.5, ease: "easeOut" },
-  },
-};
-
 export const ProjectsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
@@ -123,14 +115,8 @@ export const ProjectsSection = () => {
             initial={{ scale: 0, rotate: -10 }}
             animate={isInView ? { scale: 1, rotate: 0 } : {}}
             transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-            whileHover={{ scale: 1.05 }}
           >
-            <motion.span
-              animate={{ rotate: [0, 20, -20, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              <Sparkles className="w-4 h-4" />
-            </motion.span>
+            <Sparkles className="w-4 h-4" />
             Featured Projects
           </motion.span>
           <motion.h2 
@@ -140,15 +126,9 @@ export const ProjectsSection = () => {
             transition={{ delay: 0.3, duration: 0.6 }}
           >
             Recent{' '}
-            <motion.span 
-              className="text-gradient inline-block"
-              initial={{ opacity: 0, scale: 0 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
-              whileHover={{ scale: 1.1, rotate: [-2, 2, -2, 0] }}
-            >
+            <span className="text-gradient inline-block">
               work
-            </motion.span>
+            </span>
           </motion.h2>
           <motion.p 
             className="text-lg text-muted-foreground max-w-2xl mx-auto"
@@ -175,47 +155,29 @@ export const ProjectsSection = () => {
               target="_blank"
               rel="noopener noreferrer"
               variants={cardVariants}
-              whileHover={{ 
-                y: -10, 
-                scale: 1.02,
-                transition: { type: "spring", stiffness: 300 }
-              }}
               className="group glass-card p-0 overflow-hidden block cursor-pointer"
             >
               <div className="relative overflow-hidden">
                 <motion.img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-64 object-cover"
-                  variants={imageVariants}
-                  whileHover="hover"
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <motion.div 
-                  className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent"
-                  initial={{ opacity: 0.7 }}
-                  whileHover={{ opacity: 0.9 }}
-                />
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-70" />
               </div>
               <div className="p-6">
-                <motion.h3 
-                  className="text-2xl font-semibold mb-3 group-hover:text-primary transition-colors"
-                  whileHover={{ x: 5 }}
-                >
+                <h3 className="text-2xl font-semibold mb-3 group-hover:text-primary transition-colors">
                   {project.title}
-                </motion.h3>
+                </h3>
                 <p className="text-muted-foreground mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag, tagIndex) => (
-                    <motion.span
+                  {project.tags.map((tag) => (
+                    <span
                       key={tag}
-                      initial={{ opacity: 0, scale: 0 }}
-                      animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                      transition={{ delay: 0.7 + index * 0.1 + tagIndex * 0.05 }}
-                      whileHover={{ scale: 1.1, y: -2 }}
                       className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-mono"
                     >
                       {tag}
-                    </motion.span>
+                    </span>
                   ))}
                 </div>
               </div>
@@ -230,43 +192,31 @@ export const ProjectsSection = () => {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
-          {projects.filter(p => !p.featured).map((project, index) => (
+          {projects.filter(p => !p.featured).map((project) => (
             <motion.a
               key={project.title}
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
               variants={cardVariants}
-              whileHover={{ 
-                scale: 1.03, 
-                y: -8,
-                boxShadow: "0 20px 40px -15px rgba(0,0,0,0.3)"
-              }}
               className="group glass-card flex flex-col block cursor-pointer"
             >
               <div className="flex items-start justify-between mb-4">
-                <motion.h3 
-                  className="text-xl font-semibold group-hover:text-primary transition-colors"
-                  whileHover={{ x: 5 }}
-                >
+                <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
                   {project.title}
-                </motion.h3>
+                </h3>
               </div>
               <p className="text-muted-foreground text-sm mb-4 flex-grow">
                 {project.description}
               </p>
               <div className="flex flex-wrap gap-2">
-                {project.tags.map((tag, tagIndex) => (
-                  <motion.span
+                {project.tags.map((tag) => (
+                  <span
                     key={tag}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={isInView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ delay: 0.8 + tagIndex * 0.05 }}
-                    whileHover={{ scale: 1.1 }}
                     className="px-2 py-1 rounded bg-muted text-muted-foreground text-xs font-mono"
                   >
                     {tag}
-                  </motion.span>
+                  </span>
                 ))}
               </div>
             </motion.a>

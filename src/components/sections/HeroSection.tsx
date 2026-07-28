@@ -140,6 +140,7 @@ export const HeroSection = () => {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
           >
             <Button
+              variant="ghost"
               size="xl"
               className="btn-liquid-blue"
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
@@ -147,6 +148,7 @@ export const HeroSection = () => {
               View My Work
             </Button>
             <Button
+              variant="ghost"
               size="xl"
               className="btn-liquid-glass"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}

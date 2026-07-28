@@ -216,6 +216,7 @@ export const ContactSection = () => {
                 transition={{ delay: 0.7 }}
               >
                 <Button
+                  variant="ghost"
                   type="submit"
                   size="lg"
                   className="w-full btn-liquid-blue"

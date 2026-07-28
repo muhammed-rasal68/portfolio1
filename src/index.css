@@ -110,6 +110,10 @@
     backdrop-filter: blur(12px);
     color: hsl(210 40% 98%);
   }
+  .btn-liquid-glass:hover {
+    background: hsl(217 33% 12% / 0.4);
+    color: hsl(210 40% 98%);
+  }
   .btn-liquid-glass::before {
     content: '';
     position: absolute;
@@ -121,6 +125,10 @@
 
   .btn-liquid-blue {
     @apply relative overflow-hidden rounded-xl;
+    background: linear-gradient(135deg, hsl(217 91% 60%), hsl(217 91% 45%));
+    color: hsl(222 47% 5%);
+  }
+  .btn-liquid-blue:hover {
     background: linear-gradient(135deg, hsl(217 91% 60%), hsl(217 91% 45%));
     color: hsl(222 47% 5%);
   }

@@ -68,6 +68,11 @@ export const ContactSection = () => {
       return;
     }
 
+    if (!supabase) {
+      toast.error('Contact form is not configured. Please email me directly.');
+      return;
+    }
+
     setIsSubmitting(true);
     
     try {

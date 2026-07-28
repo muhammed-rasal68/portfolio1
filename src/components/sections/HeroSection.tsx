@@ -1,5 +1,6 @@
 // v1
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { ArrowDown, Github, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Hero3D } from '@/components/Hero3D';
@@ -41,6 +42,7 @@ const floatingAnimation = {
 };
 
 export const HeroSection = () => {
+  const navigate = useNavigate();
   const title = "I build";
   const highlight = "digital";
   const subtitle = "experiences";
@@ -151,7 +153,7 @@ export const HeroSection = () => {
               variant="ghost"
               size="xl"
               className="btn-liquid-glass"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => navigate('/contact')}
             >
               Get In Touch
             </Button>

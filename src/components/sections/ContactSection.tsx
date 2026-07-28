@@ -218,7 +218,7 @@ export const ContactSection = () => {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full"
+                  className="w-full btn-liquid-blue"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (

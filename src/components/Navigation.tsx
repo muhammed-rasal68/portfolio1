@@ -100,7 +100,7 @@ export const Navigation = () => {
             >
               <Button
                 size="sm"
-                className="ml-4"
+                className="ml-4 btn-liquid-glass"
                 onClick={() => handleNavClick('#contact')}
               >
                 Let's Talk
@@ -149,7 +149,7 @@ export const Navigation = () => {
               ))}
               <Button
                 size="lg"
-                className="mt-4"
+                className="mt-4 btn-liquid-glass"
                 onClick={() => handleNavClick('#contact')}
               >
                 Let's Talk

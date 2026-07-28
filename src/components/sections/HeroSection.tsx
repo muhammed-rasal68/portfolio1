@@ -141,12 +141,14 @@ export const HeroSection = () => {
           >
             <Button
               size="xl"
+              className="btn-liquid-blue"
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
             >
               View My Work
             </Button>
             <Button
               size="xl"
+              className="btn-liquid-glass"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Get In Touch
